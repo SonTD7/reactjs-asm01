@@ -26,42 +26,40 @@ function App() {
     );
   }
 
-const { name, doB, startDate, departmentId, annualLeave, overTime } = staffs[value]
-return (
-  <section className="section">
-  <div className="title">
-    <h2> Ứng dụng quản lý nhân sự v.0.1 </h2>
-    <div className="underline"></div>
-  </div>
-  <div className="staffs-name">
-    {/* btn container */}
- <div className="btn-container">
+  const { name, doB, startDate, departmentId, annualLeave, overTime } =
+    staffs[value];
+  return (
+    <section className="section">
+      <div className="title">
+        <h2> Ứng dụng quản lý nhân sự v.0.1 </h2>
+        <div className="underline"></div>
+      </div>
+      <div className="staffs-name">
+        {/* btn container */}
+        <div className="btn-container">
           {staffs.map((item, index) => {
             return (
               <button
                 key={item.id}
                 onClick={() => setValue(index)}
-                className={`staffs-btn ${index === value && 'active-btn'}`}
+                className={`staffs-btn ${index === value && "active-btn"}`}
               >
                 {item.name}
               </button>
-            )
+            );
           })}
           <article className="staffs-info">
-          <h3> Họ Và Tên: {name}</h3>
-          <p>Ngày sinh: {doB}</p>
-          <p>Ngày vào công ty: {startDate}</p>
-          <p>Phòng ban: {departmentId}</p>
-          <p>Số ngày nghỉ còn lại: {annualLeave}</p>
-          <p>Số ngày làm thêm: {overTime}</p>
-         
-        </article>
+            <h3> Họ Và Tên: {name}</h3>
+            <p>Ngày sinh: {doB}</p>
+            <p>Ngày vào công ty: {startDate}</p>
+            <p>Phòng ban: {departmentId}</p>
+            <p>Số ngày nghỉ còn lại: {annualLeave}</p>
+            <p>Số ngày làm thêm: {overTime}</p>
+          </article>
         </div>
-  </div>
- 
-</section>
-)
-
+      </div>
+    </section>
+  );
 }
 
 export default App;
