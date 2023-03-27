@@ -42,6 +42,7 @@ function App() {
   const departmentName = departments.find(
     (dept) => dept.id === departmentId
   )?.name;
+
   return (
     <section className="section">
       <div className="title">
